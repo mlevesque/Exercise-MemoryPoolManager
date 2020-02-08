@@ -85,7 +85,7 @@ Memory Manager with 10000 blocks per page: 0.001024 s
     - However, this will add an extra level of indirection when accessing an object allocated from the memory manager.
 - **Explicitly call constructors and destructors.**
     - When a block is allocated and deallocated, we can try explicitly calling the constructor and destructor, respectively.
-- **Use separate dedicated containers for blocks and pages instead of using ththe blocks and pages themselves.**
+- **Use separate dedicated containers for blocks and pages instead of using the blocks and pages themselves.**
     - Instead of using the blocks to store points to the next blocks, make a seaparate container and store pointers to these blocks.
     - This would eliminate the minimal size of blocks since they don't need to be big enough to contain pointers to other blocks.
     - Separate containers can mean blocks and pages can be stored in different ways. Blocks could then be stored as a set for quicker duplicate freeing validation checking.
